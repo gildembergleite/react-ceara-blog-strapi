@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: bitnami/postgresql
+    environment:
+      POSTGRES_DB: reactjs-ceara-blog-db
+      POSTGRES_USER: default
+      POSTGRES_PASSWORD: 12345678
+    ports:
+      - "5432:5432"
+    volumes:
+      - reactjs_ceara_blog_data:/var/lib/postgresql/data
+    networks:
+      - reactjs-ceara-network
+
+networks:
+  reactjs-ceara-network:
+
+volumes:
+  reactjs_ceara_blog_data:
